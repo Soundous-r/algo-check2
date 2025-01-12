@@ -1,0 +1,36 @@
+    ALGORITHM tri_Insertion
+VAR
+  key, n, i,j,u, k:INTEGER;
+   tableau : ARRAY_OF INTEGER[30];
+
+BEGIN
+//lecture du nombre d'élèments 
+ Write("entrer le nombre d' élèment du tableau ");
+ Read(n) 
+
+//lecture des élèments du tableau 
+ Write("entrer les élèments du tableau un par un");
+ FOR k FROM 0 TO n-1  DO
+   Read(tableau[i])
+ END_FOR
+  
+ //tri par insertion
+ FOR i FROM 1 TO n-1 STEP 1  DO 
+  key:=tableau[i] 
+  j:=i-1;  
+  WHILE (j>=0 AND tableau[j]>key) DO
+    tableau[j+1] :=tableau[j]
+    j:= j-1
+    
+  END_WHILE
+  tableau[j+1]:=key
+ END_FOR
+
+
+//affichage du tableau trié
+Write("Le tableau est devenu :") 
+FOR u FROM 0 TO tableau.length-1  DO    
+    Write(tableau[u])
+END_FOR
+
+END
